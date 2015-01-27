@@ -8,4 +8,16 @@ EXECUTABLE=$STARTSSL_API_PATH"startssl_"$COMMAND".py"
 
 if [[ -e $EXECUTABLE ]]; then
 	$PYTHON $EXECUTABLE ${@:2}
+else
+	echo "StartSSL command line interface, version 1.1"
+	echo
+	echo "Usage: startssl <option> [parameters]"
+	echo
+	echo "Available options are:"
+	echo "  auth       authenticate against StartSSL and stores session key"
+	echo "  getcerts   show a list of your certificates"
+	echo "  validate   validate a domain name"
+	echo "  certify    generate a key pair for a validated domain and request StartSSL to sign the public key"
+	echo "             (see startssl help certify for syntax)"
+	echo "  help       show a detailed manual or information specific to a command"
 fi
